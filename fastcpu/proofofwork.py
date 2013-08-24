@@ -8,7 +8,7 @@ from shared import config
 
 import ctypes
 
-bitmsglib = 'BitMsgHash.so'
+bitmsglib = './bitmsghash.so'
 if "win32" == sys.platform:
 	bitmsglib = 'BitMsgHash.dll'
 bso = ctypes.CDLL(bitmsglib)
