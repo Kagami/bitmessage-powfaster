@@ -17,7 +17,7 @@
 #define HASH_SIZE 64
 #define BUFLEN 16384
 
-#if defined(__GNUC__) && defined(__unix__)
+#if defined(__GNUC__)
   #define EXPORT __attribute__ ((__visibility__("default")))
   #define UINT intptr_t
 #elif defined(WIN32)
