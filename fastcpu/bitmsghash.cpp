@@ -46,7 +46,7 @@ void * threadfunc(void* param) {
 
                 (*nonce) = ntohll(tmpnonce); /* increment nonce */
                 SHA512_Init(&sha);
-				SHA512_Update(&sha, buf, HASH_SIZE+sizeof(uint64_t));
+                SHA512_Update(&sha, buf, HASH_SIZE+sizeof(uint64_t));
                 SHA512_Final(output, &sha);
                 SHA512_Init(&sha);
                 SHA512_Update(&sha, output, HASH_SIZE);
@@ -61,7 +61,7 @@ void * threadfunc(void* param) {
 
 extern "C" __declspec(dllexport) unsigned long long BitmessagePOW(unsigned char * starthash, unsigned long long target)
 {
-		successval = 0;
+        successval = 0;
         max_val = target;
         initialHash = (unsigned char *) starthash;
 #       ifdef WIN32
