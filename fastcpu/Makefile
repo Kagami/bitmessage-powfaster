@@ -1,11 +1,13 @@
 all: bitmsghash.so
 
+run:
+	./testpow.py
+
 bitmsghash.so: bitmsghash.o
-	g++ -shared -L/usr/lib -lssl -lcrypto -o bitmsghash.so bitmsghash.o
+	g++ bitmsghash.o -shared -fPIC -lpthread -lcrypto -o bitmsghash.so
 
 bitmsghash.o:
-	g++ -fpic -c bitmsghash.cpp
+	g++ -Wall -O3 -march=native -fPIC -c bitmsghash.cpp
 
 clean:
-	rm *.o *.so
-
+	rm -f *.o *.so
